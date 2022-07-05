@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+## Robot escape from maze
 
-You can use the [editor on GitHub](https://github.com/Tina-MJY/tina.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+A robot is trying to escape from a maze where it starts moving from the top-left corner 
+(0,0) to the exit in the bottom-right corner (6,6). It moves according to the following 
+rules:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- The robot has 60% chance to go forward along the same direction.
 
-### Markdown
+- The robot has 20% chance to turn left and 20% chance to turn right.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- The initial moving direction is indicated by the pointer. So, if the robot chooses 
+to go forward, it will reach (1,0) in the next step.
 
-```markdown
-Syntax highlighted code block
+- The new position must be within the boundaries of the maze.
 
-# Header 1
-## Header 2
-### Header 3
+- The new position must not have been visited previously.
 
-- Bulleted
-- List
+- If the new position does not fulfil the criteria above, the robot will try another 
+move again. Every decision is independent of the others.
 
-1. Numbered
-2. List
+- If the robot reaches a dead-end - all directions are not enterable, it fails to 
+leave the maze.
 
-**Bold** and _Italic_ and `Code` text
+- The robot continues to move until it reaches the exit.
 
-[Link](url) and ![Image](src)
-```
+![Question Image](images/question.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Coding description
 
-### Jekyll Themes
+- Program using the Monte Carlo method to estimate the probability (P) of the robot
+successfully escaping from the maze. The simulation should run one million times.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Tina-MJY/tina.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- Program print out the simulation results clearly and round the success rate P to
+3 digits after the decimal point.
 
-### Support or Contact
+- The acceptable range of the success rate is 0.395 - 0.400 and the execution time 
+is less than 5 seconds.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Main method is located in the main class.
+
+- All other classes is defined as the private static inner classes of the main class.
+
+### Development
+
+- JDK 1.8
