@@ -23,7 +23,7 @@ leave the maze.
 
 - The robot continues to move until it reaches the exit.
 
-![Question Image](images/question.png)
+![Question Image](images/question.jpg)
 
 ### Coding description
 
